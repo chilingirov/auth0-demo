@@ -1,5 +1,6 @@
 import { withPageAuthRequired } from '@auth0/nextjs-auth0';
 import { useUser } from '@auth0/nextjs-auth0';
+import Link from 'next/link'
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
@@ -17,10 +18,10 @@ export default function Home() {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
+          Welcome to<a href="https://nextjs.org">Next.js!</a>
         </h1>
       <div>
-        {user && <a href="/api/auth/logout">Logout</a>}
+        {user &&  <Link href="/api/auth/logout"><a>Logout</a></Link>}
       </div>
         <p className={styles.description}>
           Get started by editing{' '}
