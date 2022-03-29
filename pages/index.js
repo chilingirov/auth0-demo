@@ -1,8 +1,12 @@
+import { withPageAuthRequired } from '@auth0/nextjs-auth0';
+import { useUser } from '@auth0/nextjs-auth0';
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
+    const { user, error, isLoading } = useUser();
+
   return (
     <div className={styles.container}>
       <Head>
@@ -15,7 +19,9 @@ export default function Home() {
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
-
+      <div>
+        {user && <a href="/api/auth/logout">Logout</a>}
+      </div>
         <p className={styles.description}>
           Get started by editing{' '}
           <code className={styles.code}>pages/index.js</code>
@@ -67,3 +73,6 @@ export default function Home() {
     </div>
   )
 }
+
+
+export const getServerSideProps = withPageAuthRequired();
