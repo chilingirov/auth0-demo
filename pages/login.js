@@ -14,8 +14,8 @@ export default function Login() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div>
-          <h1>This is a route for logging in!</h1>
-        {user &&  <Link href="/api/auth/login"><a>Login</a></Link>}
+          <h3>This is a route for logging in!</h3>
+          <Link href="/api/auth/login"><a>Login</a></Link>
         </div>
     </div>
   )
