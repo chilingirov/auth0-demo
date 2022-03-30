@@ -21,7 +21,7 @@ export default function Home() {
           Welcome to<a href="https://nextjs.org">Next.js!</a>
         </h1>
       <div>
-        {user &&  <Link href="/api/auth/logout"><a>Logout</a></Link>}
+        {user &&  <Link href="/logout"><a style={{color:"red"}}>Go to logout page</a></Link>}
       </div>
         <p className={styles.description}>
           Get started by editing{' '}
